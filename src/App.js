@@ -39,16 +39,14 @@ const App = () => {
   };
 
   return (
-    <div className='games__Container'>
-      <Games
-        onChangeItem={changeItemHandler}
-        onReload={reloadHandler}
-        isCross={isCross}
-        win={winMessage}
-        itemArray={itemArray}
-        winPopup={toast}
-      />
-    </div>
+    <Games
+      onChangeItem={changeItemHandler}
+      onReload={reloadHandler}
+      isCross={isCross}
+      win={winMessage}
+      itemArray={itemArray}
+      winPopup={toast}
+    />
   );
 };
 

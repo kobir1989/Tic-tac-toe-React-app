@@ -11,7 +11,7 @@ const Games = ({
   winPopup,
 }) => {
   return (
-    <Container className='p-5'>
+    <Container className='p-4'>
       <div>
         <h1 className='text-success text-uppercase text-center mb-2'>
           Tic Tac Toe
@@ -19,7 +19,7 @@ const Games = ({
       </div>
       <ToastContainer position='top-center' />
       <Row>
-        <Col className='offset-md-3'>
+        <Col className='offset-md-'>
           {win ? (
             <div className='text'>
               {winPopup(win, {
