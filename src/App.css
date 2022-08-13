@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: #1b2430;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+}
+.box {
+  width: auto;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons {
+  font-size: 3.5rem;
+  color: #ffffff;
+}
+.text {
+  margin-bottom: 2rem;
+}
