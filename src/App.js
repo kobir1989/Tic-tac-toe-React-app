@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Games from './Games';
 import './App.css';
-
+import checkWinner from './winLogic';
 ////////////////////////////////////////////////////////////////////////
 const itemArray = new Array(9).fill('empty');
 const App = () => {
@@ -13,19 +13,29 @@ const App = () => {
   const reloadHandler = () => {
     setIsCross(false);
     setWinMessage('');
-    itemArray.fill('empty', 0, 8);
+    itemArray.fill('empty', 0, 9);
   };
 
   const changeItemHandler = (itemNumber) => {
     if (winMessage) {
-      return toast(winMessage, { type: 'success' });
+      return toast('Game Over', {
+        theme: 'colored',
+        type: 'error',
+        autoClose: 1800,
+      });
     }
     if (itemArray[itemNumber] === 'empty') {
       itemArray[itemNumber] = isCross ? 'Cross' : 'Circle';
       setIsCross(!isCross);
     } else {
-      return toast('Drow No one Wins!', { type: 'error' });
+      return toast('Incorrect move!', {
+        theme: 'colored',
+        type: 'warning',
+        autoClose: 1800,
+      });
     }
+
+    checkWinner(itemArray, setWinMessage);
   };
 
   return (
@@ -36,6 +46,7 @@ const App = () => {
         isCross={isCross}
         win={winMessage}
         itemArray={itemArray}
+        winPopup={toast}
       />
     </div>
   );

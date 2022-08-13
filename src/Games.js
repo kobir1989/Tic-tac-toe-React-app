@@ -2,7 +2,14 @@ import React from 'react';
 import Icon from './Components/Icon';
 import { ToastContainer } from 'react-toastify';
 import { Card, CardBody, Button, Container, Col, Row } from 'reactstrap';
-const Games = ({ onChangeItem, onReload, isCross, win, itemArray }) => {
+const Games = ({
+  onChangeItem,
+  onReload,
+  isCross,
+  win,
+  itemArray,
+  winPopup,
+}) => {
   return (
     <Container className='p-5'>
       <div>
@@ -10,11 +17,16 @@ const Games = ({ onChangeItem, onReload, isCross, win, itemArray }) => {
           Tick Tac Toe
         </h1>
       </div>
-      <ToastContainer position='bottom-center' />
+      <ToastContainer position='top-center' />
       <Row>
         <Col className='offset-md-3'>
           {win ? (
             <div className='text'>
+              {winPopup(win, {
+                theme: 'colored',
+                type: 'success',
+                autoClose: 1800,
+              })}
               <h4 className='text-success text-uppercase text-center '>
                 {win}
               </h4>
