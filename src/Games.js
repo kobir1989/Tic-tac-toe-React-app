@@ -14,7 +14,7 @@ const Games = ({
     <Container className='p-5'>
       <div>
         <h1 className='text-success text-uppercase text-center mb-2'>
-          Tick Tac Toe
+          Tic Tac Toe
         </h1>
       </div>
       <ToastContainer position='top-center' />
