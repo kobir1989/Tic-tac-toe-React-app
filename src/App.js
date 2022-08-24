@@ -46,6 +46,7 @@ const App = () => {
       win={winMessage}
       itemArray={itemArray}
       winPopup={toast}
+      
     />
   );
 };
